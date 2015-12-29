@@ -42,7 +42,6 @@ DEVICE_RESOLUTION := 240x240
 
 # FSTAB
 TARGET_RECOVERY_FSTAB := device/lge/vee3/rootdir/fstab.vee3
-#TARGET_RECOVERY_FSTAB := device/lge/vee3/recovery/recovery.fstab
 
 # OTA Assert
 TARGET_OTA_ASSERT_DEVICE := E425,E430,E431,E435,vee3
