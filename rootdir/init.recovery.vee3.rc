@@ -29,3 +29,4 @@
 on early-init
     setprop ro.product.device vee3
     setprop ro.product.model vee3
+    setprop ro.product.manufacturer LGE
