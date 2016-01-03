@@ -31,8 +31,8 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/rootdir,ro
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/configs,system)
 
 # Recovery Files
-#$(shell mkdir -p $(OUT)/recovery/root/etc)
-#$(shell cp device/lge/vee3/recovery/twrp.fstab $(OUT)/recovery/root/etc/twrp.fstab)
+$(shell mkdir -p out/target/product/vee3/recovery/root/etc)
+$(shell cp device/lge/vee3/recovery/twrp.fstab out/target/product/vee3/recovery/root/etc/twrp.fstab)
 
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi nodpi
 PRODUCT_AAPT_PREF_CONFIG := ldpi
