@@ -1,4 +1,6 @@
-# Copyright (c) 2009-2012, Code Aurora Forum. All rights reserved.
+#!/system/bin/sh
+# Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
+# Copyright (c) 2014, TeamHackLG. All rights reserved.
 # Copyright (c) 2015, TeamVee. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -8,7 +10,7 @@
 #     * Redistributions in binary form must reproduce the above copyright
 #       notice, this list of conditions and the following disclaimer in the
 #       documentation and/or other materials provided with the distribution.
-#     * Neither the name of Code Aurora nor
+#     * Neither the name of The Linux Foundation nor
 #       the names of its contributors may be used to endorse or promote
 #       products derived from this software without specific prior written
 #       permission.
@@ -26,7 +28,26 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-service vee_main-sh /sbin/sh /init.recovery.vee.sh
-    class main
-    user root
-    oneshot
+# No path is set up at this point so we have to do it here.
+PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+export PATH
+
+# Set baseband based on modem
+basebandcheck=`getprop gsm.version.baseband | grep -o -e "V10" -e "V20"`
+case "$basebandcheck" in
+	"") setprop gsm.version.baseband `strings /dev/block/mmcblk0p12 | grep -e "-V10.-" -e "-V20.-" | head -1` ;;
+esac
+
+# Get device based on baseband
+deviceset=`getprop gsm.version.baseband | grep -o -e "E410" -e "E411" -e "E415" -e "E420" -e "E425" -e "E430" -e "E431" -e "E435" | head -1`
+
+# Set Variant
+setprop ro.product.model="$deviceset"
+setprop ro.product.device="$deviceset"
+setprop ro.product.manufacturer="LGE"
+
+# Set essential configs
+echo `getprop ro.serialno` > /sys/class/android_usb/android0/iSerial
+echo `getprop ro.product.manufacturer` > /sys/class/android_usb/android0/iManufacturer
+echo `getprop ro.product.manufacturer` > /sys/class/android_usb/android0/f_rndis/manufacturer
+echo `getprop ro.product.model` > /sys/class/android_usb/android0/iProduct
