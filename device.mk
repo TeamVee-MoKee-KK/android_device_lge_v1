@@ -21,9 +21,6 @@
 # Include Vee Common
 $(call inherit-product, device/lge/vee-common/vee-common.mk)
 
-# inherit from the proprietary version
-$(call inherit-product, vendor/lge/vee3/vee3-vendor.mk)
-
 # Rootdir files
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/rootdir,root)
 
@@ -34,7 +31,3 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/configs,sy
 $(shell mkdir -p out/target/product/vee3/recovery/root/etc)
 $(shell cp device/lge/vee3/recovery/twrp.fstab out/target/product/vee3/recovery/root/etc/twrp.fstab)
 
-PRODUCT_AAPT_CONFIG := normal ldpi mdpi nodpi
-PRODUCT_AAPT_PREF_CONFIG := ldpi
-
-include device/lge/vee3/system_prop.mk

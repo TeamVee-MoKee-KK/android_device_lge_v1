@@ -18,27 +18,12 @@ include device/lge/vee-common/BoardConfigCommon.mk
 
 TARGET_COMMON_VEE := true
 
-# inherit from the proprietary version
--include vendor/lge/vee3/BoardConfigVendor.mk
-
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_vee3_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=vee3 androidboot.selinux=permissive
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01300000
-
-# Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 12582912
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12582912
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 958398464
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 1876951040
-BOARD_FLASH_BLOCK_SIZE := 131072
-TARGET_USERIMAGES_USE_EXT4 := true
 
 # BT
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/vee3/bluetooth
-
-# Recovery
-DEVICE_RESOLUTION := 240x240
 
 # FSTAB
 TARGET_RECOVERY_FSTAB := device/lge/vee3/rootdir/fstab.vee3
