@@ -24,9 +24,6 @@ $(call inherit-product, device/lge/vee-common/vee-common.mk)
 # Rootdir files
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/rootdir,root)
 
-# Config Files
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/configs,system)
-
 # Recovery Files
 $(shell mkdir -p out/target/product/vee3/recovery/root/etc)
 $(shell cp device/lge/vee3/recovery/twrp.fstab out/target/product/vee3/recovery/root/etc/twrp.fstab)
