@@ -38,12 +38,7 @@
 void vendor_load_properties() {
     char device[PROP_VALUE_MAX];
     char bbversion[92];
-    char bbversionrecovery[92];
     FILE *fp;
-
-    fp = popen("/sbin/strings /dev/block/mmcblk0p12 | /sbin/grep -e '-V10.-' -e '-V20.-' | /sbin/grep -o -e 'E425' -e 'E430' -e 'E431' -e 'E435' | /sbin/head -1", "r");
-    fgets(bbversionrecovery, sizeof(bbversionrecovery), fp);
-    pclose(fp);
 
     fp = popen("/system/xbin/strings /dev/block/mmcblk0p12 | /system/bin/grep -e '-V10.-' -e '-V20.-' | /system/bin/grep -o -e 'E425' -e 'E430' -e 'E431' -e 'E435' | /system/xbin/head -1", "r");
     fgets(bbversion, sizeof(bbversion), fp);
@@ -68,30 +63,6 @@ void vendor_load_properties() {
         property_set("persist.multisim.config", "none");
         property_set("ro.multi.rild", "false");
     } else if (strstr(bbversion, "E435")) {
-        property_set("ro.product.device", "E435");
-        property_set("ro.product.model", "E435 (L3 II Dual)");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.multisim.config", "dsds");
-        property_set("ro.multi.rild", "true");
-    } else if (strstr(bbversionrecovery, "E425")) {
-        property_set("ro.product.device", "E425");
-        property_set("ro.product.model", "E425 (L3 II Single)");
-        property_set("persist.radio.multisim.config", "none");
-        property_set("persist.multisim.config", "none");
-        property_set("ro.multi.rild", "false");
-    } else if (strstr(bbversionrecovery, "E430")) {
-        property_set("ro.product.device", "E430");
-        property_set("ro.product.model", "E430 (L3 II Single)");
-        property_set("persist.radio.multisim.config", "none");
-        property_set("persist.multisim.config", "none");
-        property_set("ro.multi.rild", "false");
-    } else if (strstr(bbversionrecovery, "E431")) {
-        property_set("ro.product.device", "E431");
-        property_set("ro.product.model", "E431 (L3 II Single)");
-        property_set("persist.radio.multisim.config", "none");
-        property_set("persist.multisim.config", "none");
-        property_set("ro.multi.rild", "false");
-    } else if (strstr(bbversionrecovery, "E435")) {
         property_set("ro.product.device", "E435");
         property_set("ro.product.model", "E435 (L3 II Dual)");
         property_set("persist.radio.multisim.config", "dsds");
