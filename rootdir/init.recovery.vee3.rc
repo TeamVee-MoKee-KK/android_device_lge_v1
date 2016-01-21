@@ -26,7 +26,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-service vee_main-sh /sbin/sh /init.recovery.vee.sh
-    class main
-    user root
-    oneshot
+on early-init
+    setprop ro.product.device vee3
+    setprop ro.product.model vee3
+    setprop ro.product.manufacturer LGE
