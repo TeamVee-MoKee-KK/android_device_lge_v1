@@ -28,3 +28,5 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/lge/vee3/rootdir,ro
 $(shell mkdir -p out/target/product/vee3/recovery/root/etc)
 $(shell cp device/lge/vee3/recovery/twrp.fstab out/target/product/vee3/recovery/root/etc/twrp.fstab)
 
+# Sensor File
+PRODUCT_COPY_FILES += vendor/lge/vee-common/proprietary-vee3/bin/sensord:system/bin/sensord
