@@ -18,6 +18,9 @@ include device/lge/vee-common/BoardConfigCommon.mk
 
 TARGET_COMMON_VEE := true
 
+# inherit from the proprietary version
+-include vendor/lge/vee3/BoardConfigVendor.mk
+
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_vee3_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=vee3 androidboot.selinux=permissive
