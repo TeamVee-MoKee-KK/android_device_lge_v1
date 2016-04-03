@@ -18,8 +18,8 @@ TARGET_COMMON_VEE := true
 include device/lge/vee-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/lge/vee3/BoardConfigVendor.mk
+-include vendor/lge/v1/BoardConfigVendor.mk
 
 # OTA Assert
 TARGET_UNIFIED_DEVICE := true
-TARGET_OTA_ASSERT_DEVICE := E425,E430,E431,E435,vee3
+TARGET_OTA_ASSERT_DEVICE := E410,E411,E415,E420,v1

@@ -1,6 +1,6 @@
-TeamVee - Project Vee3 © 2015
+TeamVee - Project V1 © 2015
 
-Device configuration for LGE Optimus L3 II (Vee3)
+Device configuration for LGE Optimus L1 II (V1)
 =====================================
 
 Basic   | Spec Sheet
@@ -15,10 +15,4 @@ Project Android Version | 4.4.4
 Custom ROM Variant | Cyanogenmod 11
 Storage | 4GB
 MicroSD | Up to 32GB
-Battery | 1540 mAh
-Dimensions | 102.6 x 61.1 x 11.9 mm
 Display | 240 x 320 pixels IPS
-Camera  | 3.15 MP, 2048 x 1536 pixels
-Release Date | February 2013
-
-![LG L3 II](http://cdn2.gsmarena.com/vv/pics/lg/lg-optimus-l3-ii.jpg "LG L3 II") ![LG L3 II Dual](http://cdn2.gsmarena.com/vv/pics/lg/lg-optimus-l3-ii-dual-2.jpg "LG L3 II Dual")

@@ -22,4 +22,4 @@
 $(call inherit-product, device/lge/vee-common/vee-common.mk)
 
 # inherit from the proprietary version
-$(call inherit-product, vendor/lge/vee3/vee3-vendor.mk)
+$(call inherit-product, vendor/lge/v1/v1-vendor.mk)
