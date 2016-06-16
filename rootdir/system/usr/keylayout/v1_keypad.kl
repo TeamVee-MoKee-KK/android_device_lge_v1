@@ -1,5 +1,5 @@
-# Copyright 2016 The Android Open Source Project
-# Copyright 2016 TeamHacklG
+# Copyright (c) 2011, Code Aurora Forum.
+# Copyright (c) 2015, TeamVee.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,16 +12,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/lge/v1/device.mk)
-
-# Device identifier. This must come after all inclusions
-PRODUCT_NAME := full_v1
-PRODUCT_DEVICE := v1
-PRODUCT_BRAND := LGE
-PRODUCT_MODEL := v1
-PRODUCT_MANUFACTURER := LGE
+key 114   VOLUME_DOWN       WAKE_DROPPED
+key 115   VOLUME_UP         WAKE_DROPPED
+key 172   HOME              WAKE

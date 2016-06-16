@@ -13,15 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/lge/v1/device.mk)
-
-# Device identifier. This must come after all inclusions
-PRODUCT_NAME := full_v1
-PRODUCT_DEVICE := v1
-PRODUCT_BRAND := LGE
-PRODUCT_MODEL := v1
-PRODUCT_MANUFACTURER := LGE
+# Lcd Density
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density="120"
+# Enforce Phone Mode view
+PRODUCT_PROPERTY_OVERRIDES += ro.screen.layout="normal"
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += ro.telephony.ril.v3="qcomdsds,signalstrength"
