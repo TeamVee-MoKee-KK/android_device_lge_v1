@@ -33,9 +33,6 @@ on fs
     swapon_all fstab.v1
 
 on boot
-    chown system system /sys/module/lge_emmc_direct_access/parameters/lcd_k_cal
-    chown system system /sys/devices/platform/msm_fb.131073/mdp_kcal
-
     # Sensors
     chown system system /mpt/prox_calibration.dat
     chmod 0660 /mpt/prox_calibration.dat
@@ -75,25 +72,6 @@ on boot
     chmod 0660 /sys/devices/platform/i2c-gpio.5/i2c-5/5-0039/run_calibration
     chmod 0660 /sys/devices/platform/i2c-gpio.5/i2c-5/5-0039/prox_cal_data
     chmod 0660 /sys/devices/platform/i2c-gpio.5/i2c-5/5-0039/pdata
-
-    # [NeutronDev03][neutrondev03@gmail.com] Let's flash some, shall we
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/led_pattern
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/led_blink
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/led_current_index
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/leds/R/brightness
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/leds/G/brightness
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/leds/B/brightness
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/leds/R/led_current
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/leds/G/led_current
-    chown system system /sys/devices/platform/i2c-gpio.6/i2c-6/6-0032/leds/B/led_current
-
-    start qcamerasvr
-
-# msm specific files that need to be created on /data
-on post-fs-data
-    # [NeutronDev03][neutrondev03@gmail.com] Let's flash some, shall we
-    mkdir /data/misc/rgb 0664 system system
-    chown system system /data/misc/rgb/lp5521_current.dat
 
 service ril-daemon1 /system/bin/rild -c 1
     class main
