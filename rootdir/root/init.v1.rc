@@ -30,7 +30,6 @@ import init.lge.shared.rc
 
 on fs
     mount_all fstab.v1
-    swapon_all fstab.v1
 
 on boot
     # Sensors
