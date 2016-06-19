@@ -32,9 +32,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/lge/v1/rootdir/system/usr/keylayout/mms100s_ts.kl:system/usr/keylayout/mms100s_ts.kl \
-    device/lge/v1/rootdir/system/usr/keylayout/v1_keypad.kl:system/usr/keylayout/v1_keypad.kl \
-    device/lge/v1/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-    device/lge/v1/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/lge/v1/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
+    device/lge/v1/rootdir/system/usr/keylayout/v1_keypad.kl:system/usr/keylayout/v1_keypad.kl
+
+PRODUCT_COPY_FILES += \
+    device/lge/msm7x27a-common/rootdir/system/etc/gen2_media_profiles.xml:system/etc/media_profiles.xml
 
 include device/lge/v1/system_prop.mk
