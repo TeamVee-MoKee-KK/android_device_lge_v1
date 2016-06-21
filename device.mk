@@ -21,7 +21,7 @@ $(call inherit-product-if-exists, vendor/lge/v1/v1-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/lge/v1/overlay
 
-PRODUCT_AAPT_CONFIG := normal ldpi mdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := ldpi
 
 PRODUCT_COPY_FILES += \
