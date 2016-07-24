@@ -66,7 +66,7 @@ TARGET_OTA_ASSERT_DEVICE := E410,E411,E415,E420,v1
 
 # Set Device in init based on baseband
 TARGET_INIT_VENDOR_LIB := libinit_v1
-TARGET_LIBINIT_DEFINES_FILE := device/lge/v1/init/init_v1.c
+TARGET_LIBINIT_DEFINES_FILE := device/lge/v1/init/init_v1.cpp
 
 # Audio
 NEW_INPUT_AUDIO_HAL := true
