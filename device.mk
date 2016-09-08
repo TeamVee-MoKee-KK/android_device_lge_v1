@@ -37,6 +37,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/msm7x27a-common/rootdir/system/etc/gen2_media_profiles.xml:system/etc/media_profiles.xml
 
+# Light HAL
+PRODUCT_PACKAGES += lights.msm7x27a
+
 # Gello
 PRODUCT_PACKAGES += Gello
 
