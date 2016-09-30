@@ -43,4 +43,7 @@ PRODUCT_PACKAGES += lights.msm7x27a
 # Gello
 PRODUCT_PACKAGES += Gello
 
-include device/lge/v1/system_prop.mk
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density="120" \
+    ro.screen.layout="normal"
