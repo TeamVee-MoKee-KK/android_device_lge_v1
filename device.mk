@@ -16,10 +16,10 @@
 # This file includes all definitions that apply to ALL L1II devices
 # Everything in this directory will become public
 
+LGE_MSM7X27A_DEVICE := v1
+
 $(call inherit-product, device/lge/msm7x27a-common/msm7x27a-common.mk)
 $(call inherit-product-if-exists, vendor/lge/v1/v1-vendor.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/lge/v1/overlay
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := ldpi
@@ -29,17 +29,10 @@ TARGET_SCREEN_HEIGHT := 320
 TARGET_SCREEN_WIDTH := 240
 
 PRODUCT_COPY_FILES += \
-    device/lge/v1/rootdir/root/fstab.v1:root/fstab.v1 \
-    device/lge/v1/rootdir/root/init.v1.rc:root/init.v1.rc \
-    device/lge/v1/rootdir/root/init.v1ds.sh:root/init.v1ds.sh \
-    device/lge/v1/rootdir/root/ueventd.v1.rc:root/ueventd.v1.rc
+    device/lge/v1/rootdir/root/init.v1ds.sh:root/init.v1ds.sh
 
 PRODUCT_COPY_FILES += \
-    device/lge/v1/rootdir/system/usr/keylayout/mms100s_ts.kl:system/usr/keylayout/mms100s_ts.kl \
-    device/lge/v1/rootdir/system/usr/keylayout/v1_keypad.kl:system/usr/keylayout/v1_keypad.kl
-
-PRODUCT_COPY_FILES += \
-    device/lge/msm7x27a-common/rootdir/system/etc/gen2_media_profiles.xml:system/etc/media_profiles.xml
+    device/lge/v1/rootdir/system/usr/keylayout/mms100s_ts.kl:system/usr/keylayout/mms100s_ts.kl
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -13,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LGE_MSM7X27A_DEVICE := v1
+
 # inherit from the proprietary things
 include device/lge/msm7x27a-common/BoardConfigCommon.mk
 include vendor/lge/v1/BoardConfigVendor.mk
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=v1 androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := cyanogenmod_v1_defconfig
 
 # Partitions
@@ -26,12 +27,6 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 12582912
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12582912
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 958398464
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1876951040
-
-# Recovery FSTAB
-TARGET_RECOVERY_FSTAB := device/lge/v1/rootdir/root/fstab.v1
-
-# BT Include
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/v1/bluetooth
 
 # Recovery
 DEVICE_RESOLUTION := 240x240
@@ -59,6 +54,3 @@ TARGET_OTA_ASSERT_DEVICE := E410,E411,E415,E420,v1
 # Set Device in init based on baseband
 TARGET_INIT_VENDOR_LIB := libinit_v1
 TARGET_LIBINIT_DEFINES_FILE := device/lge/v1/init/init_v1.cpp
-
-# Audio
-NEW_INPUT_AUDIO_HAL := true
