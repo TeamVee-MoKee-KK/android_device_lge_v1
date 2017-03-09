@@ -1,5 +1,6 @@
-# Copyright 2016 The Android Open Source Project
-# Copyright 2016 TeamHacklG
+# Copyright (C) 2016 The Android Open Source Project
+#               2017 The LineageOS Project
+#                    TeamHacklG
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +21,7 @@ include device/lge/msm7x27a-common/BoardConfigCommon.mk
 include vendor/lge/v1/BoardConfigVendor.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_v1_defconfig
+TARGET_KERNEL_CONFIG := lineage_v1_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 12582912
